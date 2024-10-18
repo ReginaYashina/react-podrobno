@@ -1,11 +1,9 @@
 import {useState} from 'react';
 
-type OnOffPropsType = {
-    on: boolean
-    setOn: (value: boolean) => void
-};
+type OnOffPropsType = {};
 
-export const OnOff = (props: OnOffPropsType) => {
+export const UncontrolledOnOff = (props: OnOffPropsType) => {
+    const [on, setOn] = useState(false)
 
     const OnOffStyle = {
         display: 'flex',
@@ -21,7 +19,7 @@ export const OnOff = (props: OnOffPropsType) => {
         justifyContent: 'center',
         alignItems: 'center',
         border: '1px solid black',
-        backgroundColor: props.on ? 'green' : 'transparent'
+        backgroundColor: on ? 'green' : 'transparent'
     }
     const offStyle = {
         cursor: 'pointer',
@@ -31,7 +29,7 @@ export const OnOff = (props: OnOffPropsType) => {
         justifyContent: 'center',
         alignItems: 'center',
         border: '1px solid black',
-        backgroundColor: props.on ? 'transparent' : 'red'
+        backgroundColor: on ? 'transparent' : 'red'
     }
     const indicatorStyle = {
         display: 'inline-block',
@@ -39,14 +37,14 @@ export const OnOff = (props: OnOffPropsType) => {
         height: '15px',
         borderRadius: '50%',
         border: '1px solid black',
-        backgroundColor: props.on ? 'green' : 'red'
+        backgroundColor: on ? 'green' : 'red'
     }
 
     const setOnHandler = () => {
-        props.setOn(true)
+        setOn(true)
     }
     const setOffHandler = () => {
-        props.setOn(false)
+        setOn(false)
     }
 
     return (
