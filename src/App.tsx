@@ -15,11 +15,11 @@ function App() {
     return (
         <div className="App">
             {/*<AppTitle title={'This is APP component'}/>*/}
-            <Rating value={value} onClick={setValue}/>
-            <Accordion title={'This is AccordionTitle-1'} collapsed = {collapsed} setCollapsed={setCollapsed}/>
-            <OnOff on = {on} setOn={setOn}/>
+            {/*<Rating value={value} onClick={setValue}/>*/}
+            {/*<Accordion title={'This is AccordionTitle-1'} collapsed = {collapsed} setCollapsed={setCollapsed}/>*/}
+            {/*<OnOff on = {on} setOn={setOn}/>*/}
             {/*<UncontrolledAccordion title={'UncontrolledAccordion'}/>*/}
-            {/*<UncontrolledRating />*/}
+            <UncontrolledRating />
         </div>
     );
 }
