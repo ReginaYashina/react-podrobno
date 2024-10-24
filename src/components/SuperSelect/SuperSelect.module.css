@@ -1,0 +1,51 @@
+.selectCommon {
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-weight: bold;
+    width: 300px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.selectHeader {
+    justify-content: center;
+    font-size: 18px;
+    border: 1px solid rgb(124, 132, 237);
+    background-color: rgb(124, 132, 237);
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.selectWrapper {
+    width: 300px;
+}
+
+.selectWrapper:focus-visible {
+    outline-color: transparent;
+}
+
+.selectOptions {
+    /*border-bottom: 1px solid rgb(124, 132, 237);*/
+    height: 30px;
+    background: -webkit-linear-gradient(180deg, rgb(236, 255, 251), rgb(124, 132, 237) 100%);
+    background: -moz-linear-gradient(180deg, rgb(236, 255, 251), rgb(124, 132, 237) 100%);
+    background: linear-gradient(180deg, rgb(236, 255, 251), rgb(124, 132, 237) 100%);
+    font-size: 16px;
+    margin-top: 5px;
+    transition: all .3s ease;
+}
+
+.selectOptions:hover {
+    background: -webkit-linear-gradient(0deg, rgb(236, 255, 251), rgb(124, 132, 237) 100%);
+    background: -moz-linear-gradient(0deg, rgb(236, 255, 251), rgb(124, 132, 237) 100%);
+    background: linear-gradient(0deg, rgb(236, 255, 251), rgb(124, 132, 237) 100%);
+}
+
+.selectedItem {
+    margin-top: 5px;
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}
