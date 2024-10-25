@@ -14,12 +14,7 @@ function App() {
     const [on, setOn] = useState(false)
     return (
         <div className="App">
-            {/*<AppTitle title={'This is APP component'}/>*/}
-            {/*<Rating value={value} onClick={setValue}/>*/}
-            {/*<Accordion title={'This is AccordionTitle-1'} collapsed = {collapsed} setCollapsed={setCollapsed}/>*/}
-            {/*<OnOff on = {on} setOn={setOn}/>*/}
-            {/*<UncontrolledAccordion title={'UncontrolledAccordion'}/>*/}
-            <UncontrolledRating />
+           <p>APP</p>
         </div>
     );
 }
@@ -34,6 +29,5 @@ function AppTitle(props: AppTitlePropsType) {
         <h2>{props.title}</h2>
     )
 }
-
 
 export default App;

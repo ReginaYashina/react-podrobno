@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 import {RatingValueType} from '../Rating/Rating';
-
 
 type RatingPropsType = {
     defaultValue?: RatingValueType
     onChange?: (value: RatingValueType) => void
 }
 
-export function UncontrolledRating(props: RatingPropsType) {
+export function UncontrolledRatingComponent(props: RatingPropsType) {
     console.log('UncontrolledRating rendering')
 
     const [value, setValue] = useState<RatingValueType>(props.defaultValue ? props.defaultValue : 0)
@@ -30,7 +29,7 @@ type StarPropsType = {
     onChange?: (value: RatingValueType) => void
 }
 
-function Star(props: StarPropsType) {
+function StarComponent(props: StarPropsType) {
     console.log('Star rendering')
     const StarStyle = {
         cursor: 'pointer',
@@ -41,3 +40,6 @@ function Star(props: StarPropsType) {
             <b>star </b> : 'star'} </span>
     )
 }
+
+export const UncontrolledRating = memo(UncontrolledRatingComponent)
+const Star = memo(StarComponent)

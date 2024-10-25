@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {string} from 'prop-types';
 
 type ItemsType = {
@@ -11,10 +11,10 @@ type AccordionPropsType = {
     collapsed: boolean
     setCollapsed: (collapsed: boolean) => void
     items: ItemsType[]
-    onClick: (value:any) => void
+    onClick: (value: any) => void
 }
 
-export function Accordion(props: AccordionPropsType) {
+function AccordionComponent(props: AccordionPropsType) {
     console.log('UncontrolledAccordion rendering')
     return (
         <div>
@@ -30,8 +30,7 @@ type AccordionTitlePropsType = {
     collapsed: boolean
 }
 
-
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitleComponent(props: AccordionTitlePropsType) {
     console.log('AccordionTitle rendering')
 
     const onClickHandler = () => {
@@ -42,10 +41,10 @@ function AccordionTitle(props: AccordionTitlePropsType) {
 
 type AccordionBodyPropsType = {
     items: ItemsType[]
-    onClick: (value:any) => void
+    onClick: (value: any) => void
 }
 
-function AccordionBody(props: AccordionBodyPropsType) {
+function AccordionBodyComponent(props: AccordionBodyPropsType) {
     console.log('AccordionBody rendering')
     return (
         <ul>
@@ -53,3 +52,7 @@ function AccordionBody(props: AccordionBodyPropsType) {
         </ul>
     )
 }
+
+export const Accordion = memo(AccordionComponent)
+const AccordionTitle = memo(AccordionTitleComponent)
+const AccordionBody = memo(AccordionBodyComponent)

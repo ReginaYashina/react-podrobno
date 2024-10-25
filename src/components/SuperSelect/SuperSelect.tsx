@@ -1,4 +1,4 @@
-import {KeyboardEvent, useEffect, useState} from 'react';
+import {KeyboardEvent, memo, useEffect, useState} from 'react';
 import s from './SuperSelect.module.css'
 
 type ItemsType = {
@@ -11,7 +11,7 @@ type SelectProps = {
     setSelectorValue: (value: any) => void
     items: ItemsType[]
 };
-export const SuperSelect = (props: SelectProps) => {
+export const SuperSelectComponent = (props: SelectProps) => {
     const {value, setSelectorValue, items} = props;
     const [collapsedValue, setCollapsedValue] = useState(false);
     const [hoveredItemValue, sethoveredItemValue] = useState(value);
@@ -71,3 +71,4 @@ export const SuperSelect = (props: SelectProps) => {
         </div>
     );
 };
+export const SuperSelect = memo(SuperSelectComponent)

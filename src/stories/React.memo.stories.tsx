@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 
 export default {
     title: 'React.memo demo'
@@ -14,7 +14,7 @@ const SecretUsers = (props: { users: Array<string> }) => {
         {props.users.map((user, index) => <div key={index}>{user}</div>)}
     </div>
 }
-const Users = React.memo(SecretUsers)
+const Users = memo(SecretUsers)
 export const Example1 = () => {
     const [count, setCount] = useState(0);
     const [users, setUsers] = useState(['item1', 'item2', 'item3', 'item4', 'item5']);

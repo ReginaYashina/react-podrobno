@@ -1,11 +1,11 @@
-import {useState} from 'react';
+import {memo, useState} from 'react';
 
 type OnOffPropsType = {
     on: boolean
     setOn: (value: boolean) => void
 };
 
-export const OnOff = (props: OnOffPropsType) => {
+export const OnOffComponent = (props: OnOffPropsType) => {
 
     const OnOffStyle = {
         display: 'flex',
@@ -57,3 +57,4 @@ export const OnOff = (props: OnOffPropsType) => {
         </div>
     );
 };
+export const OnOff  = memo(OnOffComponent)
