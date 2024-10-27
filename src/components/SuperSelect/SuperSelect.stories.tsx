@@ -1,7 +1,7 @@
 import {StoryObj} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import React, {useState} from 'react';
-import {SuperSelect} from './SuperSelect';
+import {ItemsType, SuperSelect} from './SuperSelect';
 
 export default {
     title: 'SuperSelect',
@@ -9,18 +9,42 @@ export default {
 };
 
 export const SelectWithValue = () => {
-    const selectItems = [
+    const selectItems: ItemsType[] = [
         {
             title: 'Minsk',
-            value: '1',
+            id: '1',
+            population: 1938280,
+            country: 'Belarus'
         },
         {
             title: 'Moskow',
-            value: '2',
+            id: '2',
+            population: 13149803,
+            country: 'Russia'
         },
         {
             title: 'Kiev',
-            value: '3',
+            id: '3',
+            population: 2952301,
+            country: 'Ukraine'
+        },
+        {
+            title: 'Gomel',
+            id: '4',
+            population: 516976,
+            country: 'Belarus'
+        },
+        {
+            title: 'Vitebsk',
+            id: '5',
+            population: 366299,
+            country: 'Belarus'
+        },
+        {
+            title: 'Sankt-Peterburg',
+            id: '6',
+            population: 5598473,
+            country: 'Russia'
         },
     ]
 
@@ -30,18 +54,42 @@ export const SelectWithValue = () => {
 }
 
 export const SelectWithoutValue = () => {
-    const selectItems = [
+    const selectItems: ItemsType[] = [
         {
             title: 'Minsk',
-            value: '1',
+            id: '1',
+            population: 1938280,
+            country: 'Belarus'
         },
         {
             title: 'Moskow',
-            value: '2',
+            id: '2',
+            population: 13149803,
+            country: 'Russia'
         },
         {
             title: 'Kiev',
-            value: '3',
+            id: '3',
+            population: 2952301,
+            country: 'Ukraine'
+        },
+        {
+            title: 'Gomel',
+            id: '4',
+            population: 516976,
+            country: 'Belarus'
+        },
+        {
+            title: 'Vitebsk',
+            id: '5',
+            population: 366299,
+            country: 'Belarus'
+        },
+        {
+            title: 'Sankt-Peterburg',
+            id: '6',
+            population: 5598473,
+            country: 'Russia'
         },
     ]
 

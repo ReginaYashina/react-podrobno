@@ -1,9 +1,11 @@
 import {KeyboardEvent, memo, useEffect, useState} from 'react';
 import s from './SuperSelect.module.css'
 
-type ItemsType = {
-    title: string,
-    value: any
+export type ItemsType = {
+    title: string
+    id: string
+    population: number,
+    country: string
 }
 
 type SelectProps = {
@@ -11,15 +13,15 @@ type SelectProps = {
     setSelectorValue: (value: any) => void
     items: ItemsType[]
 };
-export const SuperSelectComponent = (props: SelectProps) => {
+export const SuperSelect = (props: SelectProps) => {
     const {value, setSelectorValue, items} = props;
     const [collapsedValue, setCollapsedValue] = useState(false);
     const [hoveredItemValue, sethoveredItemValue] = useState(value);
     const onBlurHandler = () => {
         setCollapsedValue(false)
     }
-    const selectedValue = items.find((i => i.value === value))
-    const hoveredItem = items.find((i => i.value === hoveredItemValue))
+    const selectedValue = items.find((i => i.id === value))
+    const hoveredItem = items.find((i => i.id === hoveredItemValue))
     const onItemClick = (value: any) => {
         setSelectorValue(value)
         setCollapsedValue(false)
@@ -32,17 +34,17 @@ export const SuperSelectComponent = (props: SelectProps) => {
     const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
             for (let i = 0; i < items.length; i++) {
-                if (items[i].value === hoveredItemValue) {
+                if (items[i].id === hoveredItemValue) {
                     const pretendentElement = e.key === 'ArrowDown' ? items[i + 1] : items[i - 1]
                     if (pretendentElement) {
-                        setSelectorValue(pretendentElement.value)
+                        setSelectorValue(pretendentElement.id)
                         break
                     }
 
                 }
             }
             if (!selectedValue) {
-                setSelectorValue(items[0].value)
+                setSelectorValue(items[0].id)
             }
         }
 
@@ -62,13 +64,13 @@ export const SuperSelectComponent = (props: SelectProps) => {
 
                 {collapsedValue && items.map((i, index) =>
                     <div
-                        key={index} onClick={() => onItemClick(i.value)}
+                        key={index} onClick={() => onItemClick(i.id)}
                         className={hoveredItem === i ? `${s.selectedItem} ${s.selectCommon}` : `${s.selectOptions} ${s.selectCommon}`}
-                        onMouseEnter={() => sethoveredItemValue(i.value)}>{i.title}
+                        onMouseEnter={() => sethoveredItemValue(i.id)}>{i.title}
                     </div>
                 )}
             </div>
         </div>
     );
 };
-export const SuperSelect = memo(SuperSelectComponent)
+// export const SuperSelect = memo(SuperSelectComponent)
