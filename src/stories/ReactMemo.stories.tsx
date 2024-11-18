@@ -1,7 +1,7 @@
 import React, {memo, useState} from 'react';
 
 export default {
-    title: 'React.memo demo'
+    title: 'ReactMemo demo'
 };
 
 const NewMessagesCounter = (props: { count: number }) => {
