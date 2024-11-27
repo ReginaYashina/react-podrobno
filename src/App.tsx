@@ -6,6 +6,7 @@ import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOf
 import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 import {OnOff} from './components/OnOff/OnOff';
+import {Clock} from './components/Clock/Clock';
 
 function App() {
     console.log('App rendering')
@@ -14,7 +15,8 @@ function App() {
     const [on, setOn] = useState(false)
     return (
         <div className="App">
-           <p>APP</p>
+           {/*<p>APP</p>*/}
+            <Clock/>
         </div>
     );
 }
